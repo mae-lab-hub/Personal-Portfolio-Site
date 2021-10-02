@@ -1,0 +1,61 @@
+<%# 
+File name      : main_nav.ejs
+Student’s Name : Asmae Allou  
+StudentID      : 301159608
+Date           : 29-09-21
+%>
+
+<!--Main Nav-->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark heading">
+  <div class="container-fluid">
+   <img src="\Assets\images\goose_logo.png"></img> <a class="navbar-brand" href="/">COMP 229</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       
+        <% if (title == "Home") { %> 
+        <li class="nav-item active">
+        <% } else { %>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" aria-current="page" href="/home" tabindex="1"><i class="fas fa-sl fa-home"></i> Home </a>
+        </li>
+       
+       <% if (title == "About") { %>  
+        <li class="nav-item active">
+        <% } else  { %>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" aria-current="page"  href="/about" tabindex="3"><i class="fas fa-info-circle"></i> About </a>
+        </li>
+ 
+        <% if (title == "Projects") { %>  
+        <li class="nav-item active">
+        <% } else  { %>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" aria-current="page" href="/projects" tabindex="5"><i class="fas fa-bacteria"></i> Projects</a>
+        </li>   
+
+        <% if (title == "Services") { %>  
+        <li class="nav-item active">
+        <% } else { %>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" aria-current="page" href="/services" tabindex="7"><i class="fas fa-broom"></i> Services</a>
+        </li>  
+        
+        <% if (title == "Contact") { %>  
+        <li class="nav-item active">
+        <% } else { %>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" aria-current="page" href="/contact" tabindex="9"><i class="fas fa-phone-square-alt"></i> Contact </a>
+        </li>
+      </ul>
+     </div>
+   </div>
+ </nav>

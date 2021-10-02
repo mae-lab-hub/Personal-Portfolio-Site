@@ -1,0 +1,27 @@
+<%# 
+File name      : content_conditional.ejs
+Student’s Name : Asmae Allou  
+StudentID      : 301159608
+Date           : 29-09-21
+%>
+
+<!-- Conditional Section --> 
+<% if( title == "Home"){%>
+    <%- include home.ejs %>
+<%}%>
+
+<% if( title == "About"){%>
+    <%- include about.ejs %>
+<%}%>
+
+<% if( title == "Projects"){%>
+    <%- include projects.ejs %>
+<%}%>
+
+<% if( title == "Services"){%>
+    <%- include services.ejs %>
+<%}%>
+
+<% if( title == "Contact"){%>
+    <%- include contact.ejs %>
+<%}%>

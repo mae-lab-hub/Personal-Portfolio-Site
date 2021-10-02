@@ -1,0 +1,53 @@
+<%# 
+File name      : contact.ejs
+Student’s Name : Asmae Allou  
+StudentID      : 301159608
+Date           : 29-09-21
+%>
+
+<!-- Contact Section --> 
+<form class="row g-3 text-div shadow p-4 mb-5 rounded bg-dark text-light container" action="/home">
+  <div class="col-md-6">
+    <label for="fname" class="form-label">First Name:</label>
+    <input type="text" class="form-control" id="fname" placeholder="First name"tabindex="11">
+  </div>
+  <div class="col-md-6">
+    <label for="lname" class="form-label">Last Name:</label>
+    <input type="text" class="form-control" id="lname" placeholder="Last name" tabindex="13">
+  </div>
+  <div class="col-md-6">
+    <label for="contact-number" class="form-label">Contact number:</label>
+    <input type="text" class="form-control" id="contact-number" placeholder="xxx-xxx-xxxx" tabindex="15">
+  </div>
+  <div class="col-md-6">
+    <label for="email" class="form-label">Email:</label>
+    <input type="text" class="form-control" id="email" placeholder="Email" tabindex="17">
+  </div>
+  <div class="md-30">
+    <label class="form-label">Message:</label>
+    <textarea id="message" name="message" class="form-control" rows="5" tabindex="18"  placeholder="Type your message here!"></textarea>
+  </div>
+  <div id="buttons" class="btn-group btn-group" role="group">
+    <button type="submit" id="submit" name="submit" class="btn  btn-light rounded" tabindex="19">Send Message</button>
+    <button type="reset" id="clear" name="clear" class="btn btn-secondary rounded" tabindex="21">Clear</button>
+  </div>
+</form>
+
+<div class="container bg-dark text-light rounded p-4">
+  <h2 class="text-muted">My Contact Information</h2>
+  <div class="panel-group  fs-4">
+      <div class="panel panel-default">
+        <div class="panel-body">Number: xxx-xxx-xxxx</div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">Email: aallou@my.centennialcollege.ca</div>
+      </div>
+      <div class="panel panel-default">
+          <div class="panel-body">Po box: XXXX</div>
+        </div>
+  </div>
+  </div>
+
+<script>
+console.log("Contact page loaded...")
+</script>
