@@ -1,9 +1,13 @@
 {
-  "name": "assignment01",
-  "version": "0.0.0",
+  "name": "express-portfolio-site",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./server.js"
+  },
+  "engines": {
+    "node": "^14.18.0",
+    "npm": "^6.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
@@ -16,5 +20,18 @@
     "jquery": "^3.6.0",
     "morgan": "~1.9.1",
     "popper.js": "^1.16.1"
-  }
+  },
+  "description": "A project for comp 229 - portfolio site made with express.",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mae-lab-hub/Personal-Portfolio-Site.git"
+  },
+  "author": "Mae Allou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mae-lab-hub/Personal-Portfolio-Site/issues"
+  },
+  "homepage": "https://github.com/mae-lab-hub/Personal-Portfolio-Site#readme"
 }
