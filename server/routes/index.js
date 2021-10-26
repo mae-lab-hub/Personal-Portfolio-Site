@@ -22,8 +22,5 @@ router.get('/services', indexController.displayServicesPage);
 /*GET Contact Us*/
 router.get('/contact', indexController.displayContactPage);
 
-/*GET Contact Us*/
-router.get('/login', indexController.displayContactPage);
-
 
 module.exports = router;
