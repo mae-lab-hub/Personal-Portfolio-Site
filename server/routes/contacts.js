@@ -23,3 +23,12 @@ router.get('/',(req,res,next)=>{
 });
 
 module.exports = router;
+
+
+//Add Contact - Create
+
+
+//Edit Contact - Update
+
+
+//Delete contact
