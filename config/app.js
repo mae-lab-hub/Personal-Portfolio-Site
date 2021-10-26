@@ -1,5 +1,4 @@
 //Third-party packages
-
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
@@ -7,10 +6,10 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
 //database set up
-
 let mongoose = require('mongoose');
 let DB = require('./db');
 
+//point mongoos to db uri
 mongoose.connect(DB.URI);
 
 let mongoDB = mongoose.connection;
@@ -21,8 +20,6 @@ mongoDB.once('open', ()=>{
   console.log('Connected to MongoDB...');
 });
 
-//point mongoos to db uri
-mongoose.connect(DB.URI);
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
@@ -31,10 +28,7 @@ let usersRouter = require('../routes/users');
 let loginRouter = require('../routes/login')
 let contactsRouter = require('../routes/contacts')
 
-
-
 let app = express();
-
 
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs'); 
