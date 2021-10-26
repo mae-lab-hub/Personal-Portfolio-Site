@@ -27,6 +27,12 @@ mongoose.connect(DB.URI);
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 
+//define new routes
+let loginRouter = require('../routes/login')
+let contactsRouter = require('../routes/contacts')
+
+
+
 let app = express();
 
 
@@ -45,6 +51,10 @@ app.use(express.static(path.join(__dirname, '../node_modules')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+//use new routes
+app.use('/login',loginRouter);
+app.use('/contact-list',contactsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

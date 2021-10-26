@@ -11,7 +11,7 @@ router.get('/',(req,res,next)=>{
 
     User.find((err, UserList)=>{
         if(err){
-            
+
             return console.error(err);          
         }
         else{
@@ -19,3 +19,5 @@ router.get('/',(req,res,next)=>{
         }
     });
 });
+
+module.exports = router;
