@@ -6,86 +6,23 @@ let mongoose = require('mongoose');
 
 let Contact = require('../models/contact');
 
+let contactController = require('../controllers/contacts')
+
 //Get route for the contact model
-router.get('/',(req,res,next)=>{
-
-    Contact.find((err, contactList)=>{
-        if(err){
-
-            return console.error(err);           
-        }
-        else{
-            
-            res.render('contact/list',{title:"Contacts", ContactList:contactList}); 
-            //res.redirect(' login')    
-        }
-    });
-});
-
-
+router.get('/', contactController.displayContactList);
 
 //Edit Contact - Update operation
+
 //Get route for displaying the page
-router.get('/update/:id',(req,res,next)=>{
-
-    let id = req.params.id;
-
-    Contact.findById(id,(err, contactToEdit)=>{
-
-        if(err){
-            console.log(err);
-            res.end(err);
-        }
-        else{
-            res.render('contact/update',{title:'Update Contact',  contact:contactToEdit});
-        }
-    });
-})
+router.get('/update/:id', contactController.displayUpdatePage);
 
 //Post for processing the page
-router.post('/update/:id',(req,res,next)=>{
-
-    let id = req.params.id;
-
-    let updateContact = Contact({
-        "_id": id,
-        "contact_name": req.body.contact_name,
-        "contact_number": req.body.contact_number,
-        "email": req.body.email
-    });
-
-    Contact.updateOne({_id:id}, updateContact,(err)=>{
-        if(err){
-            console.log(err);
-            res.end(err);
-        }
-        else{
-            //refresh contact list
-            res.redirect('/contact-list');
-        }
-    });   
-});
+router.post('/update/:id', contactController.processUpdatePage);
 
 //Delete contact
+
 //Get route to perform deletion
-router.get('/delete/:id',(req,res,next)=>{
-
-    let id = req.params.id;
-
-    Contact.remove({_id:id},(err)=>{
-
-        if(err){
-            console.log(err);
-            res.end(err);
-        }
-        else{
-
-            //refresh contact list
-            res.redirect('/contact-list');
-        }
-
-    });
-});
+router.get('/delete/:id', contactController.performDelete);
 
 
 module.exports = router;
