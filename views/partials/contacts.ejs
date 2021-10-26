@@ -1,0 +1,39 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+
+<main class="container">
+
+  <div class="row">
+      <div class="col-md-offset-4 col-md-6">
+          <h1><%= title%></h1>
+          <br>
+          <table class="table table-bordered table-striped table-hover">
+              <!--Header row-->
+            <tr>
+                <th class="text-center">Contact Name</th>
+                <th class="text-center">Contact Number</th>
+                <th class="text-center">Email</th>
+            </tr>
+
+            <!--Repeatable Teempelate Row-->
+            <%for(let i = 0; i < ContactList.length; i++){%>               
+            <tr>
+                <td class="text-center"><% ContactList[i].contact_name %></td>
+                <td class="text-center"><% ContactList[i].contact_number %></td>
+                <td class="text-center"><% ContactList[i].email %></td>
+            </tr>
+            
+            <% } %> 
+
+          </table>
+      </div>
+  </div>
+
+
+</main>
+
+<%- include partials/bottom_nav.ejs %>
+
+<%- include partials/footer.ejs %>
+  
