@@ -4,16 +4,18 @@
 
 <main class="container">
 
-  <div class="row">
-      <div class="col-md-offset-4 col-md-6">
+  <div class="row text">
+      <div class="offset-md-1 col-md-10">
           <h1><%= title%></h1>
           <br>
-          <table class="table table-bordered table-striped table-hover">
+          <table class="table table-bordered table-striped table-hover text-center">
               <!--Header row-->
             <tr>
-                <th class="text-center">Contact Name</th>
-                <th class="text-center">Contact Number</th>
+                <th class="text-center col-2">Contact Name</th>
+                <th class="text-center col-3">Contact Number</th>
                 <th class="text-center">Email</th>
+                <th class="text-center"></th>
+                <th class="text-center"></th>
             </tr>
 
             <!--Repeatable Teempelate Row-->
@@ -22,6 +24,12 @@
                     <td class="text-center"><%= ContactList[i].contact_name %></td>
                     <td class="text-center"><%= ContactList[i].contact_number %></td>
                     <td class="text-center"><%= ContactList[i].email %></td>
+                    <td class="text-center">
+                        <a href="/contact-list/update/<%= ContactList[i]._id%>" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i> Update</a>
+                    </td>
+                    <td class="text-center">
+                        <a href="/contact-list/delete/<%= ContactList[i]._id%>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</a>
+                    </td>
                 </tr>       
             <% } %> 
 
