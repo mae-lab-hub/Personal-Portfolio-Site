@@ -25,7 +25,7 @@ router.get('/',(req,res,next)=>{
 
 //Edit Contact - Update operation
 //Get route for displaying the page
-router.get('/update:id',(req,res,next)=>{
+router.get('/update/:id',(req,res,next)=>{
 
     let id = req.params.id;
 
@@ -42,7 +42,7 @@ router.get('/update:id',(req,res,next)=>{
 })
 
 //Post for processing the page
-router.post('/update:id',(req,res,next)=>{
+router.post('/update/:id',(req,res,next)=>{
 
     let id = req.params.id;
 
@@ -67,7 +67,7 @@ router.post('/update:id',(req,res,next)=>{
 
 //Delete contact
 //Get route to perform deletion
-router.get('/delete:id',(req,res,next)=>{
+router.get('/delete/:id',(req,res,next)=>{
 
     let id = req.params.id;
 
