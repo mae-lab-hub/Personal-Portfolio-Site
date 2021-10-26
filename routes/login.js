@@ -9,13 +9,14 @@ let User = require('../models/user-collection');
 //Get route for the user collection
 router.get('/',(req,res,next)=>{
 
-    User.find((err, UserList)=>{
+    User.find((err, userList)=>{
         if(err){
 
             return console.error(err);          
         }
         else{
-            console.log(UserList);
+            console.log(userList);
+            res.render('partials/login', {title:"Login", UserList: userList});
         }
     });
 });

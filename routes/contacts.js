@@ -9,13 +9,15 @@ let Contact = require('../models/contact');
 //Get route for the contact model
 router.get('/',(req,res,next)=>{
 
-    Contact.find((err, ContactList)=>{
+    Contact.find((err, contactList)=>{
         if(err){
 
             return console.error(err);           
         }
         else{
-            console.log(ContactList);
+            console.log(contactList);
+
+            res.render('partials/contacts',{title:"Contacts", ContactList:contactList});     
         }
     });
 });

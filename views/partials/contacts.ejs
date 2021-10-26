@@ -1,6 +1,6 @@
-<%- include partials/header.ejs %>
+<%- include header.ejs %>
 
-<%- include partials/main_nav.ejs %>
+<%- include main_nav.ejs %>
 
 <main class="container">
 
@@ -18,12 +18,11 @@
 
             <!--Repeatable Teempelate Row-->
             <%for(let i = 0; i < ContactList.length; i++){%>               
-            <tr>
-                <td class="text-center"><% ContactList[i].contact_name %></td>
-                <td class="text-center"><% ContactList[i].contact_number %></td>
-                <td class="text-center"><% ContactList[i].email %></td>
-            </tr>
-            
+                <tr>
+                    <td class="text-center"><%= ContactList[i].contact_name %></td>
+                    <td class="text-center"><%= ContactList[i].contact_number %></td>
+                    <td class="text-center"><%= ContactList[i].email %></td>
+                </tr>       
             <% } %> 
 
           </table>
@@ -33,7 +32,7 @@
 
 </main>
 
-<%- include partials/bottom_nav.ejs %>
+<%- include bottom_nav.ejs %>
 
-<%- include partials/footer.ejs %>
+<%- include footer.ejs %>
   
