@@ -16,7 +16,8 @@ router.get('/',(req,res,next)=>{
         }
         else{
             
-            res.render('contact/list',{title:"Contacts", ContactList:contactList});     
+            res.render('contact/list',{title:"Contacts", ContactList:contactList}); 
+            //res.redirect(' login')    
         }
     });
 });
