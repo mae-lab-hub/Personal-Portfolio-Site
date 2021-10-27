@@ -20,7 +20,9 @@ Date           : 29-09-21
 
                 if(!confirm("Are you sure?")){
                     event.preventDefault();
-                    window.location.assign('/contact-list');   
+                    window.location.assign(window.location.href); 
+                  
+                    
                 }
             });
         }
