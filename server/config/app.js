@@ -70,8 +70,8 @@ app.use(passport.initialize())
 app.use(passport.session());
 
 //usermodel
-let userModel = require('../models/user-collection')
-let User = userModel.userModels;
+let userModel = require('../models/user')
+let User = userModel.User;
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
