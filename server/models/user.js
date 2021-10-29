@@ -46,7 +46,7 @@ let User =mongoose.Schema({
 
 },
 {
-    collection:"user_collection"
+    collection:"user"
 });
 
 let options = ({missingPasswordError: "Wrong / Missing Password"});
