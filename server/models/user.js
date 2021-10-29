@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-let passportLocalmongoose = require('passport-local-mongoose')
+let passportLocalMongoose = require('passport-local-mongoose')
 //creating a model class
 let User =mongoose.Schema({
 
