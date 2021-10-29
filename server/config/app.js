@@ -32,18 +32,27 @@ mongoDB.once('open', ()=>{
 });
 
 
-
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 
 //define new routes
-let loginRouter = require('../routes/login')
+//let loginRouter = require('../routes/login')
 let contactsRouter = require('../routes/contacts')
 
 let app = express();
 
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs'); 
+
+
+app.use(logger('dev')); 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, '../../public')));
+
+//We use this to make the path link look neat
+app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 //setup express session
 
@@ -68,20 +77,11 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
-app.use(logger('dev')); 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../../public')));
-
-//We use this to make the path link look neat
-app.use(express.static(path.join(__dirname, '../../node_modules')));
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 //use new routes
-app.use('/login',loginRouter);
+//app.use('/login',loginRouter);
 app.use('/contact-list',contactsRouter);
 
 // catch 404 and forward to error handler
