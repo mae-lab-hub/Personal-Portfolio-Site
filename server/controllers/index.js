@@ -26,3 +26,18 @@ module.exports.displayContactPage = (req,res,next)=>{
     res.render('index',{title:"Contact"});
 }
 
+module.exports.displayLoginPage = (req,res,next)=>{
+
+    if(!req.user){
+        res.render('auth/login',{
+            title:"login",
+            message: req.flash('loginMessage')
+            
+        })
+    }
+}
+
+module.exports.processLoginPage = (req,res,next)=>{
+
+    res.render('index',{title:"Contact"});
+}

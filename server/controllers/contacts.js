@@ -15,7 +15,7 @@ module.exports.displayContactList = (req,res,next)=>{
         }
         else{
             
-            res.render('contact/list',{title:"Contacts", ContactList:contactList}); 
+            res.render('auth/list',{title:"Contacts", ContactList:contactList}); 
             //res.redirect(' login')    
         }
     });
@@ -32,7 +32,7 @@ module.exports.displayUpdatePage = (req,res,next)=>{
             res.end(err);
         }
         else{
-            res.render('contact/update',{title:'Update Contact',  contact:contactToEdit});
+            res.render('auth/update',{title:'Update Contact',  contact:contactToEdit});
         }
     });
 };

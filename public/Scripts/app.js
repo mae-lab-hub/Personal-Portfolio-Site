@@ -6,6 +6,8 @@ Date           : 29-09-21
 */
 
 /* Outputs in console when page is loaded */ 
+
+
 (function(){
 
     function Start()
@@ -26,8 +28,12 @@ Date           : 29-09-21
                 }
             });
         }
+
     }
 
     window.addEventListener("load", Start)
 
+
 })();
+
+

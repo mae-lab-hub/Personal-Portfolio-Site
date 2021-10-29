@@ -22,5 +22,9 @@ router.get('/services', indexController.displayServicesPage);
 /*GET Contact Us*/
 router.get('/contact', indexController.displayContactPage);
 
+//router.get('login', indexController.)
+
+//router.post('login', indexController.)
+
 
 module.exports = router;

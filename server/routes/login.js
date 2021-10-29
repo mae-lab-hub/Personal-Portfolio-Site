@@ -6,19 +6,13 @@ let mongoose = require('mongoose');
 
 let User = require('../models/user-collection');
 
+let loginController = require('../controllers/login')
+
+
 //Get route for the user collection
-router.get('/',(req,res,next)=>{
+router.get('/', loginController.displayLoginPage);
 
-    User.find((err, userList)=>{
-        if(err){
+router.post('/login/Mae', loginController.processLogin)
 
-            return console.error(err);          
-        }
-        else{
-            console.log(userList);
-            res.render('partials/login', {title:"Login", UserList: userList});
-        }
-    });
-});
 
 module.exports = router;
