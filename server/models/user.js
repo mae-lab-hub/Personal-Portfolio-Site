@@ -1,5 +1,6 @@
 let mongoose = require('mongoose');
-let passportLocalMongoose = require('passport-local-mongoose')
+let passportLocalMongoose = require('passport-local-mongoose');
+
 //creating a model class
 let User =mongoose.Schema({
 
@@ -11,6 +12,13 @@ let User =mongoose.Schema({
      required: "username is required"
    }
    ,
+  /* password:{
+      type: String,
+      default: '',
+      trim: true,
+      required: 'password is required'
+
+   },*/
    email:{
 
      type: String,
@@ -38,7 +46,7 @@ let User =mongoose.Schema({
 
 },
 {
-    collection:"users"
+    collection:"user_collection"
 });
 
 let options = ({missingPasswordError: "Wrong / Missing Password"});
