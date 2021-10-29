@@ -33,13 +33,27 @@ module.exports.displayContactPage = (req,res,next)=>{
 
 module.exports.displayLoginPage = (req,res,next)=>{
 
+    console.log(User);
+    User.find((err, userList)=>{
+        if(err){
+
+            return console.error(err);          
+        }
+        else{
+            console.log(userList);
+           
+        }
+    });
+
+
+
     //check if user is already logged in
     if(!req.user){
         res.render('auth/login',{
-            title:"login",
+            title:"Login",
             message: req.flash('loginMessage'),
-            displayName : req.user ? req.user.displayName:''
-        })
+            displayName: req.user ? req.user.displayName : '' 
+             })
     }
     else{
         return res.redirect('/');
@@ -75,6 +89,67 @@ module.exports.processLoginPage = (req,res,next)=>{
 
 
 }
+
+
+module.exports.displayRegisterPage = (req,res,next)=>{
+
+
+    //check if user is logged in
+    if(!req.user){
+
+        res.render('auth/register',{
+            title:"Register",
+            message: req.flash('registerMesage'),
+            displayName: req.user ? req.user.displayName :''
+        });
+    }
+    else{
+
+        return res.redirect('/');
+    }
+
+
+    
+}
+
+module.exports.processRegisterPage = (req,res,next) => {
+
+    //instantiate user object
+    let newUser = new User({
+        username: req.body.username,
+        email :req.body.email,
+        displayName : req.body.displayName
+    });
+
+    User.register(newUser, req.body.password,(err)=>{
+        if(err){
+
+            console.log("Error: Inserting New User.")
+            if(err.name =="UserExistsError"){
+
+                req.flash('registerMessage','Registration Error: User Already Exists.');
+                console.log("Error: User Already Exists.")
+
+            }
+            return res.render('auth/register', {
+                title:"Register",
+                message: req.flash('registerMesage'),
+                displayName: req.user ? req.user.displayName :''
+
+            });
+        }
+        else{
+            //if no error, the reg is successful
+            //register the user and authenticate them
+            return passport.authenticate('local')(req,res,()=>{
+                res.redirect('/contact-list');
+            });
+        }
+    })
+}
+
+
+
 
 module.exports.performLogout = (req,res,next)=>{
 
