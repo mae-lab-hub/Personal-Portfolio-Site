@@ -7,32 +7,32 @@
     <!--Form for logging in-->
     <% if(message.length >0){%>
     <div class="alert alert-danger">
-        <%= messages%>
-    </div>
-
-    
+        <%= message%>
+    </div>  
     <%}%>
+
     <h1>Please Log in:</h1>
     <form method="POST" autocomplete="off">
         <div>
             <fieldset class="col-md-6 form-group">
                 <label for="fname" class="form-label">User Name:</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter user name" tabindex="" name="username">
+                <input type="text" class="form-control" id="username" placeholder="Enter user name" tabindex="13" name="username" required>
             </fieldset>
             <fieldset class="col-md-6 form-group">
                 <label for="password" class="form-label">Password:</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" tabindex="" name="password">
+                <input type="password" class="form-control" id="password" placeholder="Password" tabindex="15" name="password" required>
+                or
+                <a href="/register">Register Here</a>
             </fieldset>
         </div>
-
+        <!--Buttons-->
         <fieldset class="form-group text-right">
-            <input type="submit" class="btn btn-success" value="Login">
+            <input type="submit" class="btn btn-success" value="Login" tabindex="17">
             <a href="/">
-                <input type="button" class="btn btn-warning" value="Cancel">
+                <input type="button" class="btn btn-warning" value="Cancel" tabindex="19">
             </a>
         </fieldset>
-    </form>
-        
+    </form>      
 </main>
 
 <%- include ../partials/bottom_nav.ejs %>
