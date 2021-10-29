@@ -1,0 +1,49 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<main class="container">
+
+    <!--Form for logging in-->
+    <% if(message.length >0){%>
+    <div class="alert alert-danger">
+        <%= message%>
+    </div>
+
+    
+    <%}%>
+    <h1>Please Register:</h1>
+    <form method="POST" autocomplete="off">
+        <div>
+            <fieldset class="col-md-6 form-group">
+                <label for="username" class="form-label">User Name:</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter user name" tabindex="13" name="username" required>
+            </fieldset>
+            <fieldset class="col-md-6 form-group">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" tabindex="15" name="password" required>
+            </fieldset>
+             <fieldset class="col-md-6 form-group">
+                <label for="email" class="form-label">Email:</label>
+                <input type="text" class="form-control" id="email" placeholder="Email@example.com" tabindex="17" name="email" required>
+            </fieldset>
+             <fieldset class="col-md-6 form-group">
+                <label for="displayName" class="form-label">Display Name:</label>
+                <input type="text" class="form-control" id="displayName" placeholder="Display Name" tabindex="19" name="displayName" required>
+            </fieldset>
+        </div>
+
+        <fieldset class="form-group text-right">
+            <input type="submit" class="btn btn-success" value="Register" tabindex="21">
+            <a href="/">
+                <input type="button" class="btn btn-warning" value="Cancel" tabindex="23">
+            </a>
+        </fieldset>
+    </form>
+        
+</main>
+
+<%- include ../partials/bottom_nav.ejs %>
+
+<%- include ../partials/footer.ejs %>
+  
