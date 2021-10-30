@@ -15,8 +15,10 @@ module.exports.displayContactList = (req,res,next)=>{
         }
         else{
             
-            res.render('auth/list',{title:"Contacts", ContactList:contactList}); 
-            //res.redirect(' login')    
+            res.render('auth/list',
+            {title:"Contacts", 
+            ContactList:contactList,
+            displayName: req.user ? req.user.displayName : ''});              
         }
     });
 };
@@ -32,7 +34,10 @@ module.exports.displayUpdatePage = (req,res,next)=>{
             res.end(err);
         }
         else{
-            res.render('auth/update',{title:'Update Contact',  contact:contactToEdit});
+            res.render('auth/update',
+            {title:'Update Contact',
+            contact:contactToEdit,
+            displayName: req.user ? req.user.displayName : ''});
         }
     });
 };
