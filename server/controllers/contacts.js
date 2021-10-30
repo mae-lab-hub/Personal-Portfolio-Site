@@ -23,7 +23,7 @@ module.exports.displayContactList = (req,res,next)=>{
         else{
             
             res.render('auth/list',
-            {title:"Contacts", 
+            {title:"Business Contacts", 
             ContactList:contactList,
             displayName: req.user ? req.user.displayName : ''});              
         }
