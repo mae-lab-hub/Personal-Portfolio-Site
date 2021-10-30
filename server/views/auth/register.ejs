@@ -9,38 +9,37 @@
     <div class="alert alert-danger">
         <%= message%>
     </div>
-
-    
     <%}%>
-    <h1>Please Register:</h1>
-    <form method="POST" autocomplete="off">
-        <div>
-            <fieldset class="col-md-6 form-group">
-                <label for="username" class="form-label">User Name:</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter user name" tabindex="13" name="username" required>
-            </fieldset>
-            <fieldset class="col-md-6 form-group">
-                <label for="password" class="form-label">Password:</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" tabindex="15" name="password" required>
-            </fieldset>
-             <fieldset class="col-md-6 form-group">
-                <label for="email" class="form-label">Email:</label>
-                <input type="text" class="form-control" id="email" placeholder="Email@example.com" tabindex="17" name="email" required>
-            </fieldset>
-             <fieldset class="col-md-6 form-group">
-                <label for="displayName" class="form-label">Display Name:</label>
-                <input type="text" class="form-control" id="displayName" placeholder="Display Name" tabindex="19" name="displayName" required>
-            </fieldset>
-        </div>
 
-        <fieldset class="form-group text-right">
-            <input type="submit" class="btn btn-success" value="Register" tabindex="21">
-            <a href="/">
-                <input type="button" class="btn btn-warning" value="Cancel" tabindex="23">
-            </a>
-        </fieldset>
-    </form>
-        
+    <h1>Please Register:</h1>
+    <div class=" offset-md-3 col-md-6 bg-dark text-light rounded p-5">
+        <form method="POST" autocomplete="off">
+            <div>
+                <fieldset class="form-group">
+                    <label for="username" class="form-label">User Name:</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter your user name" tabindex="13" name="username" required>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" tabindex="15" name="password" required>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter your email" tabindex="17" name="email" required>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="displayName" class="form-label">Display Name:</label>
+                    <input type="text" class="form-control" id="displayName" placeholder="Enter your display name" tabindex="19" name="displayName" required>
+                </fieldset>
+            </div>
+            <fieldset class="form-group text-center">
+                <input type="submit" class="btn btn-success m-3" value="Register" tabindex="21">
+                <a href="/">
+                    <input type="button" class="btn btn-warning m-3" value="Cancel" tabindex="23">
+                </a>
+            </fieldset>
+        </form>
+    </div>      
 </main>
 
 <%- include ../partials/bottom_nav.ejs %>
