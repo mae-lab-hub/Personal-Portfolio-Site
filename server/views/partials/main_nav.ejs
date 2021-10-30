@@ -6,6 +6,7 @@ Date           : 29-09-21
 %>
 
 <!--Main Nav-->
+
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark heading">
   <div class="container-fluid">
    <img src="\Assets\images\goose_logo.png"></img> <a class="navbar-brand" href="/">COMP 229</a>
@@ -54,17 +55,19 @@ Date           : 29-09-21
         <li class="nav-item">
         <% } %>
           <a class="nav-link" aria-current="page" href="/contact" tabindex="9"><i class="fas fa-phone-square-alt"></i> Contact </a>
-        </li>
-
-        
-        <% if (title == "Login") { %>  
-        <li class="nav-item active">
-        <% } else { %>
-        <li class="nav-item">
-        <% } %>
-          <a class="nav-link" aria-current="page" href="/login" tabindex="11"><i class="fas fa-sign-in-alt"></i> Log in </a>
-        </li>
+        </li> 
+      </ul>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 displayName ml-auto ">              
+        <% if(typeof displayName =='string' && displayName ){%>
+          <li class="navbar-text displayName text-white"><i class="fas fa-lg fa-user"></i> Welcome <%= displayName%>!</li>
+          <li class="nav-item"><a href="/logout" tabindex="10"class="nav-link">
+            <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+        <%} else{%> 
+          <li class="nav-item"><a href="/login" tabindex="10" class="nav-link">
+            <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>            
+        <%}%> 
       </ul>
      </div>
    </div>
  </nav>
+
