@@ -39,12 +39,9 @@ h1{
   margin-right: auto;
 }
 
-button{
-  margin: 5%;
-}
+
 button:hover{
   background: rgba(00, 00, 00, 0.1); 
-  padding:1%;
 }
 .btn-light:hover{
   background:rgba(255, 236, 236, 0.1);
@@ -93,4 +90,9 @@ form{
 
 .clear-both{
   clear: both;
+}
+
+.displayName{
+  color: rgb(255, 255, 255);
+  margin-left: auto;
 }
