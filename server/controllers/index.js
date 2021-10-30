@@ -28,7 +28,7 @@ module.exports.displayServicesPage = (req,res,next)=>{
 
 module.exports.displayContactPage = (req,res,next)=>{
 
-    res.render('index',{title:"Contact", displayName: req.user ? req.user.displayName : ''});
+    res.render('index',{title:"Contact Us", displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayLoginPage = (req,res,next)=>{
